@@ -1,0 +1,269 @@
+
+.travel-chat-page {
+  min-height: 85vh;
+  padding: 30px 15px;
+  background: #f3f8f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.travel-chat-container {
+  width: 100%;
+  max-width: 900px;
+  height: 700px;
+  background: white;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.travel-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 24px;
+  background: #087b61;
+  color: white;
+}
+
+.travel-chat-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.travel-chat-heading {
+  flex: 1;
+}
+
+.travel-chat-header h2 {
+  margin: 0 0 5px;
+  font-size: 19px;
+}
+
+.travel-chat-header p {
+  margin: 0;
+  font-size: 13px;
+  color: #d8f5e9;
+}
+
+.chat-online-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #8ff5b6;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.chat-new-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.chat-new-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.travel-chat-messages {
+  flex: 1;
+  min-height: 0;
+  padding: 25px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.travel-chat-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 90%;
+}
+
+.travel-chat-message.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.travel-chat-avatar {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #e1f3eb;
+  color: #087b61;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.travel-chat-message.user .travel-chat-avatar {
+  background: #087b61;
+  color: white;
+}
+
+.travel-chat-bubble {
+  padding: 13px 16px;
+  border-radius: 13px;
+  background: #f0f5f2;
+  color: #263b34;
+  font-size: 14px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.travel-chat-message.user .travel-chat-bubble {
+  background: #087b61;
+  color: white;
+}
+
+.travel-chat-suggestions {
+  padding: 0 24px 15px;
+}
+
+.travel-chat-suggestions p {
+  margin: 0 0 10px;
+  font-size: 13px;
+  color: #73847b;
+  font-weight: 600;
+}
+
+.chat-suggestion-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chat-suggestion-list button {
+  border: 1px solid #d7e9df;
+  border-radius: 20px;
+  padding: 9px 13px;
+  background: #f5faf7;
+  color: #087b61;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.chat-suggestion-list button:hover {
+  background: #e1f3eb;
+}
+
+.travel-chat-input-area {
+  display: flex;
+  gap: 12px;
+  padding: 18px 22px;
+  border-top: 1px solid #e8efeb;
+}
+
+.travel-chat-input-area input {
+  flex: 1;
+  min-width: 0;
+  height: 48px;
+  padding: 0 15px;
+  border: 1px solid #d8e5de;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+.travel-chat-input-area input:focus {
+  border-color: #087b61;
+}
+
+.travel-chat-input-area button {
+  width: 50px;
+  height: 48px;
+  border: none;
+  border-radius: 10px;
+  background: #087b61;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.travel-chat-input-area button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.travel-chat-hint {
+  margin: 0;
+  padding: 0 22px 15px;
+  color: #819087;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chat-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chat-spinner {
+  animation: chat-spin 1s linear infinite;
+}
+
+@keyframes chat-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .travel-chat-page {
+    padding: 12px;
+  }
+
+  .travel-chat-container {
+    height: 80vh;
+  }
+
+  .travel-chat-header {
+    padding: 14px;
+  }
+
+  .travel-chat-header h2 {
+    font-size: 16px;
+  }
+
+  .chat-new-button {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .travel-chat-messages {
+    padding: 15px;
+  }
+
+  .travel-chat-message {
+    max-width: 100%;
+  }
+
+  .travel-chat-suggestions {
+    padding: 0 15px 12px;
+  }
+}
